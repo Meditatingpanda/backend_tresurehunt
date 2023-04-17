@@ -12,7 +12,7 @@ import helmet from 'helmet';
 
 const port = process.env.PORT || 4000;
 const app = express();
-
+connectMongoDB();
 // middleware
 app.use(morgan('dev'));
 app.use(helmet());
@@ -46,7 +46,7 @@ app.listen(port, (err) => {
     console.log(err);
   }
   console.log(`Server is running on port http://localhost:${port}/`.cyan);
-  connectMongoDB();
+ 
 }
 );
 
